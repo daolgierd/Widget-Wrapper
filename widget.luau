@@ -54,12 +54,13 @@ function class.new(plugin: Plugin, params: WidgetParams): Widget
   widget.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
   return setmetatable({
     widget = widget,
-    hidden = false,
+    hidden = params.enabled or true,
   }, class :: class) :: Widget
 end
 
 function class:show(value: boolean)
   self.widget.Enabled = value
+  self.hidden = not value
 end
 
 function class:destroy()
