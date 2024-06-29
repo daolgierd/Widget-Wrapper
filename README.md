@@ -1,5 +1,6 @@
 # Widget-Wrapper
 A **simple**, **type safe** and **minimalistic** wrapper of Roblox Studio [DockWidgetPluginGui](https://create.roblox.com/docs/reference/engine/classes/DockWidgetPluginGui)
+Its fully O(1) complexity.
 # Example
 for all the methods head to [Methods](https://github.com/daolgierd/Widget-Wrapper/tree/main?tab=readme-ov-file#methods)
 ```luau
