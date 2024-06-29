@@ -39,4 +39,4 @@ this are the props you can pass to the constructor
 - `size: Vector2?` -> default widget size in pixels
 - `min_size: Vector2?` -> minimal size for the widget in pixels
 - `enabled: boolean?` -> default visibility
-- `restore: boolean? -> if true, will override any saved enabled state with the `state` value.
+- `restore: boolean?` -> if true, will override any saved enabled state with the `state` value.
