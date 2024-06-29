@@ -17,8 +17,9 @@ type class = {
   new: (plugin: Plugin, params:WidgetParams) -> Widget,
   destroy: (self: Widget) -> (),
 
-  show: (self: Widget, value: boolean) -> (),
-  hidden: (self: Widget) -> boolean,
+  show: (self: Widget) -> (),
+  hide: (self: Widget) -> (),
+  visible: (self: Widget) -> boolean,
   set_title: (self: Widget, title: string) -> (),
 
   get: (self: Widget) -> DockWidgetPluginGui,
@@ -31,7 +32,6 @@ type class = {
 
 export type Widget = typeof(setmetatable({} :: {
   widget: DockWidgetPluginGui,
-  hidden: boolean,
 }, class :: class))
 
 function class.new(plugin: Plugin, params: WidgetParams): Widget
@@ -54,21 +54,23 @@ function class.new(plugin: Plugin, params: WidgetParams): Widget
   widget.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
   return setmetatable({
     widget = widget,
-    hidden = params.enabled or true,
   }, class :: class) :: Widget
 end
 
-function class:show(value: boolean)
-  self.widget.Enabled = value
-  self.hidden = not value
+function class:show()
+  self.widget.Enabled = false
+end
+
+function class:hide()
+  self.widget.Enabled = false
+end
+
+function class:visible()
+  return self.widget.Enabled
 end
 
 function class:destroy()
   self.widget:Destroy()
-end
-
-function class:hidden()
-  return self.hidden
 end
 
 function class:set_title(title: string)

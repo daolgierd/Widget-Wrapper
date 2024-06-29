@@ -19,14 +19,16 @@ local widget = Widget.new(plugin, {
 local frame = Instance.new("Frame")
 local text_label = Instance.new("TextLabel")
 
-widget:mount(frame, text_label) -- add ui elements to the widget
-widget:unmount(frame, text_label) -- remove ui elements from the widget
+widget:mount(frame, text_label) -- add instances to the widget
+widget:unmount(frame, text_label) -- remove instances from the widget
+widget:clear() -- destroy all instances parented to the widget
 ```
 # Methods
 - `new(plugin, props)` -> class constructor
 - `destroy()` -> destroy the widget
-- `show(value)` -> hide/show the widget based on the given value
-- `hidden()` -> returns boolean based on the widget visibility
+- `show()` -> show the widget
+- `hide()` -> hide the widget
+- `visible()` -> returns if the widget is visible
 - `set_title(title)` -> updates the current widget title
 - `get()` -> returns the `DockWidgetPluginGui` itself
 - `clear()` -> removes every `Instance` parented to the `DockWidgetPluginGui`
