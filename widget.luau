@@ -90,9 +90,7 @@ function class:unmount(...: Instance)
 end
 
 function class:clear()
-  for _, v: Instance in self.widget:GetChildren() do
-    v:Destroy()
-  end
+  self.widget:ClearAllChildren()
 end
 
 function class:get()
