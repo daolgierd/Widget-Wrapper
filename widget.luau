@@ -76,13 +76,13 @@ function class:set_title(title: string)
 end
 
 function class:mount(...: Instance)
-  for _, v: Instance in ipairs({...}) do
+  for _, v: Instance in {...} do
     v.Parent = self.widget
   end
 end
 
 function class:unmount(...: Instance)
-  for _, v: Instance in ipairs({...}) do
+  for _, v: Instance in {...} do
     if v.Parent == self.widget then
       v:Destroy()
     end
