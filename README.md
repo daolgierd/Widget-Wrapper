@@ -41,5 +41,7 @@ this are the props you can pass to the constructor
 - `state: Enum.InitialDockState?` -> default dock state
 - `size: Vector2?` -> default widget size in pixels
 - `min_size: Vector2?` -> minimal size for the widget in pixels
+> [!WARNING]  
+> Minimum widget size does not work since roblox decided to update docking system.
 - `enabled: boolean?` -> default visibility
 - `restore: boolean?` -> if true, will override any saved enabled state with the `state` value.
