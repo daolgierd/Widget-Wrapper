@@ -58,7 +58,7 @@ function class.new(plugin: Plugin, params: WidgetParams): Widget
 end
 
 function class:show()
-  self.widget.Enabled = false
+  self.widget.Enabled = true
 end
 
 function class:hide()
